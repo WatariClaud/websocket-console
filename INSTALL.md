@@ -61,7 +61,7 @@ server {
  listen [::]:443 ssl http2;
  server_name nemp.domain.tld;
  index index.html index.htm;
- root /var/www/nemp.domain.tld/console/;
+ root /var/www/nemp.domain.tld/;
  ssl_certificate /etc/letsencrypt/live/nemp.domain.tld/fullchain.pem;
  ssl_certificate_key /etc/letsencrypt/live/nemp.domain.tld/privkey.pem;
 
