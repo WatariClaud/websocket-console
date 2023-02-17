@@ -1,37 +1,57 @@
-# # WebSocket Web Developer Console - installation instructions
+# WebSocket Web Developer Console - installation instructions
 
-To download the latest version of this software, run the following commands:
+## Download
+
+These are download instructions of this software for the different Linux distributions.
+
+### Debian / Ubuntu Linux
 
 ```console
 apt update
 apt -y upgrade
 apt -y install git
+cd /root/
 git clone https://github.com/libersoft-org/websocket-console.git
 cd websocket-console
 ```
 
-Now you need to move the content of the "src" folder to your web root subdirectory.
+### CentOS / RHEL / Fedora Linux
 
-Here are the examples of how to do it based on different web servers:
+```console
+dnf -y update
+dnf -y install git
+cd /root/
+git clone https://github.com/libersoft-org/websocket-console.git
+cd websocket-console
+```
+
+## Installation
+
+Here are examples based on web server software that you're using:
 
 ### NEMP Server
 
-This is the example for NEMP server stored in /root/nemp-server/:
-
-- Move the content of the "src" folder to your web root:
+- Move the content of the "src" folder to your NEMP Server web root subdirectory (example for server stored in **/root/nemp-server/** directory):
 
 ```console
-mkdir /root/nemp-server/www/console
-mv ./src /root/nemp-server/www/console
+mkdir /root/nemp-server/src/www/console
+mv ./src /root/nemp-server/src/www/console
 ```
 
-- Then open the web browser and navigate to: https://nemp.domain.tld/console/
+- Then open the web browser and navigate to: https://nemp.domain.tld/console/ (replace **nemp.domain.tld** with your actual NEMP Server domain name)
 
 ### NGINX
 
-This is the example for web console stored in **/var/www/nemp.domain.tld/console/** directory:
+- Move the content of the "src" folder to your NGINX web root subdirectory (example for server stored in **/var/www/nemp.domain.tld/** directory):
 
-- Create the virtual web configuration file for your NGINX server (by default in: /etc/nginx/sites-available/) named by your domain name (for example: **nemp.domain.tld.conf**) and insert this content:
+```console
+mkdir /var/www/nemp.domain.tld/console
+mv ./src /var/www/nemp.domain.tld/console
+```
+
+- Then open the web browser and navigate to: https://nemp.domain.tld/console/ (replace **nemp.domain.tld** with your actual NEMP Server domain name)
+
+If you don't have your NGINX server block, here is the example of configuration file (by default in: /etc/nginx/sites-enabled/) named by your domain name (for example: **nemp.domain.tld.conf**):
 
 ```ini
 server {
@@ -59,15 +79,7 @@ server {
 }
 ```
 
-Replace **nemp.domain.tld** with your actual domain name and save the file.
-
-... then move the content of the "src" directory to your web server root, for example:
-
-```console
-mkdir /var/www/nemp.domain.tld
-mkdir /var/www/nemp.domain.tld/console
-mv ./src /var/www/nemp.domain.tld/console/
-```
+(replace **nemp.domain.tld** with your actual domain name and save the file)
 
 Then restart your NGINX server using:
 
