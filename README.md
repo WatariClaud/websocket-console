@@ -2,10 +2,6 @@
 
 This is the WebSocket Web Developer Console software. It can be used for easy debugging of server software based on WebSocket.
 
-## Development status
-
-- Working version done.
-
 ## Documentation
 
 - [**Installation instructions**](./INSTALL.md)
