@@ -5,7 +5,7 @@ This is the WebSocket Web Developer Console software. It can be used for easy de
 ## Documentation
 
 - [**Installation instructions**](./INSTALL.md)
-- [**Roadmap**](./ROADMAP.md)
+- [**Development roadmap**](./ROADMAP.md)
 - [**License**](./LICENSE)
 
 ## Donations

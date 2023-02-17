@@ -1,4 +1,4 @@
-# WebSocket Web Developer Console - roadmap
+# WebSocket Web Developer Console - development roadmap
 
 |         Feature        |     Implemented    |
 |------------------------|--------------------|
