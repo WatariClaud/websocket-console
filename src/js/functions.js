@@ -18,8 +18,8 @@ function connect() {
   ws = new WebSocket(document.querySelector('#address').value);
   ws.onopen = (e) => { onConnect() };
   ws.onclose = (e) => { onDisconnect() };
-  ws.onmessage = async (e) => { addLog('<span class="text-yellow bold">RECEIVED:</span> ' + syntaxHighlight(e.data)); };
-  ws.onerror = (e) => { addLog('<span class="text-red bold">ERROR:</span> ' + syntaxHighlight(e.data)); };
+  ws.onmessage = async (e) => { addLog('<span class="text-yellow bold">RECEIVED:</span> ' + syntaxHighlight(JSON.stringify(JSON.parse(e.data), undefined, 4))); };
+  ws.onerror = (e) => { addLog('<span class="text-red bold">ERROR:</span> ' + syntaxHighlight(JSON.stringify(JSON.parse(e.data), undefined, 4))); };
  }
 }
 
@@ -37,7 +37,7 @@ function onDisconnect() {
 
 function send() {
  var textbox = document.querySelector('#text');
- addLog('<span class="text-blue bold">SENT:</span> ' + syntaxHighlight(textbox.value));
+ addLog('<span class="text-blue bold">SENT:</span> ' + syntaxHighlight(JSON.stringify(JSON.parse(textbox.value), undefined, 4)));
  ws.send(textbox.value);
  textbox.value = '';
  textbox.focus();
